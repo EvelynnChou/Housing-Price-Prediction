@@ -26,10 +26,6 @@ for o in range(1,n+1):  #切換n
     print(o)
 
 
-#for i, j in enumerate(url_list):
-#       print(i,j)
-
-
 #爬新聞內容
 news_list = []
 for code in url_list:
