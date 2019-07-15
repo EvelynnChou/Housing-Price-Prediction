@@ -13,14 +13,14 @@ import json
 
 
 
-with open('D:/Users/p10260458/Desktop/玉山房價預測/新增資料夾/data/train_New_0612.csv', newline='') as csvFile:
+with open('train_New_0612.csv', newline='') as csvFile:
     rows = csv.reader(csvFile, delimiter=',')
     
     for row in rows: 
         print(row)
 
 
-train = pd.read_csv('D:/Users/p10260458/Desktop/玉山房價預測/新增資料夾/data/train_New_0612.csv',encoding='big5')
+train = pd.read_csv('train_New_0612.csv',encoding='big5')
 #train = train.set_index('building_id')
 train.head()
 
@@ -34,7 +34,7 @@ train=train.drop(columns=['txn_dt_Excel', 'txn_dt_SAS','building_complete_dt_Exc
 
 train.head()
 
-test = pd.read_csv('D:/Users/p10260458/Desktop/玉山房價預測/新增資料夾/data/test_New_0617.csv',encoding='big5')
+test = pd.read_csv('test_New_0617.csv',encoding='big5')
 #test = test.set_index('building_id')
 test.head()
 
@@ -168,9 +168,9 @@ test_minMax = combine_minMax[combine_minMax.trainornot == 1]
 test_minMax = test_minMax.drop(columns=['trainornot'])
 
 
-train_minMax.to_csv('D:/Users/p10260458/Desktop/玉山房價預測/新增資料夾/data/train_minMax.csv', encoding='utf-8', index=False)
+train_minMax.to_csv('train_minMax.csv', encoding='utf-8', index=False)
 
-test_minMax.to_csv('D:/Users/p10260458/Desktop/玉山房價預測/新增資料夾/data/test_minMax.csv', encoding='utf-8', index=False)
+test_minMax.to_csv('test_minMax.csv', encoding='utf-8', index=False)
 
 
 
@@ -191,7 +191,7 @@ test_OneHot = test_OneHot.drop(columns=['trainornot'])
 
 
 
-train_OneHot.to_csv('D:/Users/p10260458/Desktop/玉山房價預測/新增資料夾/data/train_OneHot.csv', encoding='utf-8', index=False)
+train_OneHot.to_csv('train_OneHot.csv', encoding='utf-8', index=False)
 
 
-test_OneHot.to_csv('D:/Users/p10260458/Desktop/玉山房價預測/新增資料夾/data/test_OneHot.csv', encoding='utf-8', index=False)
+test_OneHot.to_csv('test_OneHot.csv', encoding='utf-8', index=False)
